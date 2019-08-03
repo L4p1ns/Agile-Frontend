@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class ProjectItem extends Component {
   render() {
     return (
@@ -12,9 +13,8 @@ class ProjectItem extends Component {
             <div className="col-lg-6 col-md-4 col-8">
               <h3>Spring / React Project</h3>
               <p>
-
-                    Projet pour créer un tableau KANBAN avec Spring Boot et React
-</p>
+                  Projet pour créer un tableau KANBAN avec Spring Boot et React
+             </p>
             </div>
             <div className="col-md-4 d-none d-lg-block">
               <ul className="list-group">
