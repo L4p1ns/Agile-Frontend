@@ -1,23 +1,17 @@
 {
-    "extends": [
-        "eslint:recommended",
-        "prettier",
-        "plugin:react/recommended"
-    ],
-
-    // "extends": ["airbnb", "prettier", "plugin:react/recommended"],
-    // "plugins": ["prettier"],
-    // "rules": {
-    //     "prettier/prettier": "error",
-    //     "no-unused-vars": "warn",
-    //     "no-console": "off",
-    //     "func-names": "off",
-    //     "no-process-exit": "off",
-    //     "object-shorthand": "off",
-    //     "class-methods-use-this": "off",
-    //     "no-unused-expressions": "off",
-    // },
-    // "parserOptions": {
-    //     "sourceType": "module"
-    // }
+    "extends": ["airbnb", "prettier", "prettier/react"],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": "error",
+        "no-unused-vars": "warn",
+        "no-console": "off",
+        "func-names": "off",
+        "no-process-exit": "off",
+        "object-shorthand": "off",
+        "class-methods-use-this": "off",
+        "no-unused-expressions": "off",
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    }
 }

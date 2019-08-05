@@ -1,31 +1,31 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { createProject } from "../../actions/ProjectActions";
-import classnames from "classnames";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createProject } from '../../actions/ProjectActions';
+import classnames from 'classnames';
 
 class AddProject extends Component {
   constructor() {
     super();
     this.state = {
-      nom: "",
-      code: "",
-      description: "",
-      dateDebut: "",
-      dateFin: "",
+      nom: '',
+      code: '',
+      description: '',
+      dateDebut: '',
+      dateFin: '',
       errors: {}
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
- // Life cycle hooks
- componentWillReceiveProps(nextProps) {
-  if (nextProps.errors) {
-    this.setState({
-      errors: nextProps.errors
-    });
+  // Life cycle hooks
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
   }
-}
   onChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -44,7 +44,6 @@ class AddProject extends Component {
     // console.log(newProject);
     this.props.createProject(newProject, this.props.history);
   };
-
 
   render() {
     return (
@@ -131,13 +130,18 @@ class AddProject extends Component {
         </div>
       </div>
     );
-
   }
 }
 AddProject.propTypes = {
-  createProject: PropTypes.func.isRequired
+  createProject: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired
 };
+
+const mapStateToProps = state => ({
+  errors: state.errors
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { createProject }
 )(AddProject);
