@@ -46,18 +46,9 @@ class AddProject extends Component {
   };
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="project">
-        {
-          // Check name attribute input fields
-          // Create constructor
-          // Set state
-          // Set value on input fields
-          // Create onChange function
-          // Set onChange on each input field
-          // Bind on constructor
-          // Check state change in the react extension
-        }
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
@@ -70,9 +61,14 @@ class AddProject extends Component {
                     name="nom"
                     value={this.state.nom}
                     onChange={this.onChange}
-                    className="form-control form-control-lg "
+                    className={classnames('form-control form-control-lg', {
+                      'is-invalid': errors.nom
+                    })}
                     placeholder="Nom du projet"
                   />
+                  {errors.nom && (
+                    <div className="invalid-feedback">{errors.nom}</div>
+                  )}
                 </div>
                 <div className="form-group">
                   <input
@@ -80,9 +76,14 @@ class AddProject extends Component {
                     name="code"
                     value={this.state.code}
                     onChange={this.onChange}
-                    className="form-control form-control-lg"
+                    className={classnames('form-control form-control-lg', {
+                      'is-invalid': errors.code
+                    })}
                     placeholder="Code du projet"
                   />
+                  {errors.code && (
+                    <div className="invalid-feedback">{errors.code}</div>
+                  )}
                 </div>
                 {
                   // <!-- disabled for Edit Only!! remove "disabled" for the Create operation -->
